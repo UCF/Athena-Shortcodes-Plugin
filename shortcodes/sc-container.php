@@ -67,7 +67,7 @@ if ( ! class_exists( 'ContainerSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>

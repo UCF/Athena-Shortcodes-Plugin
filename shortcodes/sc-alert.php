@@ -68,7 +68,7 @@ if ( ! class_exists( 'AlertSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
 			<?php if ( $attributes ) { echo implode( ' ', $attributes ); } ?>>
@@ -165,7 +165,7 @@ if ( ! class_exists( 'AlertLinkSC' ) ) {
 
 			ob_start();
 		?>
-			<a class="<?php echo implode( $classes, ' ' ); ?>"
+			<a class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $href ) { echo 'href="' . $href . '"'; } ?>
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $new_window ) { echo 'target="_blank"'; } ?>
@@ -260,7 +260,7 @@ if ( ! class_exists( 'AlertHeadingSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>

@@ -72,7 +72,7 @@ if ( ! class_exists( 'CloseSC' ) ) {
 
 			ob_start();
 		?>
-			<button class="<?php echo implode( $classes, ' ' ); ?>"
+			<button class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
 			<?php if ( $dismiss ) { echo 'data-dismiss="' . $dismiss . '"'; } ?>

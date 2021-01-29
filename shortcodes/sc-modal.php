@@ -84,7 +84,7 @@ if ( ! class_exists( 'ModalSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $labelledby ) { echo 'aria-labelledby="' . $labelledby . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
@@ -160,7 +160,7 @@ if ( ! class_exists( 'ModalHeaderSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -228,7 +228,7 @@ if ( ! class_exists( 'ModalFooterSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -296,7 +296,7 @@ if ( ! class_exists( 'ModalBodySC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -387,7 +387,7 @@ if ( ! class_exists( 'ModalTitleSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>

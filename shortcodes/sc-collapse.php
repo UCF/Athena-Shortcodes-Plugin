@@ -88,7 +88,7 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
 			<?php if ( $attributes ) { echo implode( ' ', $attributes ); } ?>>
@@ -175,7 +175,7 @@ if ( ! class_exists( 'AccordionSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>" role="tablist"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>" role="tablist"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>

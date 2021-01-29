@@ -292,7 +292,7 @@ if ( ! class_exists( 'MediaBackgroundContainerSC' ) ) {
 			if ( !$has_valid_media_bg ) {
 				ob_start();
 			?>
-				<div class="<?php echo implode( $classes, ' ' ); ?>"
+				<div class="<?php echo implode( ' ', $classes ); ?>"
 				<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 				<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
 				<?php if ( $object_pos ) { echo 'data-object-position="' . $object_pos . '"'; } ?>

@@ -98,7 +98,7 @@ if ( ! class_exists( 'CardSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo $content_formatted; ?>
@@ -199,7 +199,7 @@ if ( ! class_exists( 'CardHeaderSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
 			<?php if ( $attributes ) { echo implode( ' ', $attributes ); } ?>>
@@ -284,7 +284,7 @@ if ( ! class_exists( 'CardFooterSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -352,7 +352,7 @@ if ( ! class_exists( 'CardBlockSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -442,7 +442,7 @@ if ( ! class_exists( 'CardTitleSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -520,7 +520,7 @@ if ( ! class_exists( 'CardSubtitleSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
 			</<?php echo $elem; ?>>
@@ -597,7 +597,7 @@ if ( ! class_exists( 'CardTextSC' ) ) {
 
 			ob_start();
 		?>
-			<<?php echo $elem; ?> class="<?php echo implode( $classes, ' ' ); ?>"
+			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
 			</<?php echo $elem; ?>>
@@ -796,7 +796,7 @@ if ( ! class_exists( 'CardGroupSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -864,7 +864,7 @@ if ( ! class_exists( 'CardDeckSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
@@ -932,7 +932,7 @@ if ( ! class_exists( 'CardColumnsSC' ) ) {
 
 			ob_start();
 		?>
-			<div class="<?php echo implode( $classes, ' ' ); ?>"
+			<div class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $id ) { echo 'id="' . $id . '"'; } ?>
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>>
 				<?php echo do_shortcode( $content ); ?>
