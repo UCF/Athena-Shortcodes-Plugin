@@ -96,6 +96,16 @@ if ( ! class_exists( 'ATHENA_SC_Config' ) ) {
 										  <br>&bull; Enabling on an existing site will break existing embeds that include responsive
 										  embed wrappers already.  <strong>Tread carefully!</strong>",
 					'field_type'      => 'checkbox'
+				) ),
+				new ATHENA_SC_Plugin_Option( self::$option_prefix . 'remove_image_dims', array(
+					'default'         => true,
+					'format_callback' => 'wp_validate_boolean',
+					'field_title'     => 'Remove width/height attributes on images',
+					'field_desc'      => "When checked, inline width and height attributes will be <em>removed</em> from images in
+										  post content.
+										  <br>For backward compatibility, this setting is enabled by default, but we recommend
+										  disabling this setting when possible for performance reasons.",
+					'field_type'      => 'checkbox'
 				) )
 			);
 		}
@@ -176,11 +186,6 @@ if ( ! class_exists( 'ATHENA_SC_Config' ) ) {
 		 * Adds filters for plugin options that apply our
 		 * formatting rules and defaults.
 		 *
-		 * NOTE: option defaults get added to the
-		 * `default_option_{$option_name}` hook when registered via
-		 * `register_setting()` with the `default` arg param passed in,
-		 * so a default_option hook isn't necessary here.
-		 *
 		 * @author Jo Dickson
 		 * @since 0.4.0
 		 * @return void
@@ -189,6 +194,12 @@ if ( ! class_exists( 'ATHENA_SC_Config' ) ) {
 			foreach ( self::get_options() as $option ) {
 				// Apply formatting to returned option values
 				add_filter( "option_{$option->option_name}", array( 'ATHENA_SC_Config', 'format_option' ), 10, 2 );
+				add_filter( "default_option_{$option->option_name}", function( $default, $o, $passed_default ) use ( $option ) {
+					if ( $passed_default ) {
+						return $default;
+					}
+					return $option->default;
+				}, 10, 3 );
 			}
 		}
 

@@ -418,6 +418,12 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 				if ( strpos( $matches[0], 'figure-img' ) === false ) {
 					$image_filtered = str_replace( "class='", "class='figure-img ", str_replace( 'class="', 'class="figure-img ', $matches[0] ) );
 					$image_filtered = str_replace( array( 'float-left', 'float-right', 'mx-auto d-block' ), '', $image_filtered );
+
+					// Required for IE11 compatibility
+					if ( $width ) {
+						$image_filtered = str_replace( ' img-fluid ', ' img-fluid w-100 ', $image_filtered );
+					}
+
 					$content = str_replace( $matches[0], $image_filtered, $content );
 				}
 			}
