@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: athena-framework, shortcodes
 Requires at least: 4.5.3
 Tested up to: 5.3
-Stable tag: 0.5.2
+Stable tag: 0.5.3
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -32,6 +32,17 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 
 == Changelog ==
+
+= 0.5.3 =
+Enhancements:
+* Added plugin option that turns off the plugin's ability to strip `width`/`height` attributes from `<img>` elems (enabled by default for backward compatibility)
+* Added absolute file includes in main plugin file
+* Upgraded packages
+
+Bug Fixes:
+* Fixed issue with default plugin options not applying correctly
+* Added fix for images within `<figure>` elems in IE11
+* Fixed notices with PHP 7.4+
 
 = 0.5.2 =
 Documentation:

@@ -24,6 +24,17 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.5.3 ###
+Enhancements:
+* Added plugin option that turns off the plugin's ability to strip `width`/`height` attributes from `<img>` elems (enabled by default for backward compatibility)
+* Added absolute file includes in main plugin file
+* Upgraded packages
+
+Bug Fixes:
+* Fixed issue with default plugin options not applying correctly
+* Added fix for images within `<figure>` elems in IE11
+* Fixed notices with PHP 7.4+
+
 ### 0.5.2 ###
 Documentation:
 * Updated the contributing doc to reflect the switch from slack to teams.
