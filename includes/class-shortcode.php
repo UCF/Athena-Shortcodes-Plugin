@@ -25,6 +25,20 @@ if ( ! class_exists( 'ATHENA_SC_Shortcode' ) ) {
 		}
 
 		/**
+		 * Returns an array of fields for the
+		 * shortcake plugin.
+		 *
+		 * @return Array | The array of fields
+		 */
+		public function shortcake_fields() {
+			if ( ! empty( $this->fields() ) ) {
+				return athena_sc_wpscif_convert( $this->fields() );
+			}
+
+			return array();
+		}
+
+		/**
 		 * Registers the fields with the `WP-Shortcode-Interface` Plugin
 		 *
 		 * @author Jim Barnes

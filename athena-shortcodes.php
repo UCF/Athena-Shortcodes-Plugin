@@ -41,6 +41,7 @@ define( 'ATHENA_SC__CACHE_BUST', athena_sc_get_cache_bust() );
 // Shortcode files
 include_once ATHENA_SC__PLUGIN_DIR . 'includes/class-shortcode.php';
 include_once ATHENA_SC__PLUGIN_DIR . 'shortcodes/shortcodes.php';
+include_once ATHENA_SC__PLUGIN_DIR . 'includes/athena-sc-utils.php';
 
 include_once ATHENA_SC__PLUGIN_DIR . 'includes/athena-sc-config.php';
 include_once ATHENA_SC__PLUGIN_DIR . 'includes/athena-sc-shortcode-config.php';
@@ -85,6 +86,9 @@ if ( ! function_exists( 'athena_sc_init' ) ) {
 		}
 		// Register our shortcodes.
 		add_action( 'init', array( 'ATHENA_SC_Shortcode_Config', 'register_shortcodes' ) );
+
+		// Register shortcake UIs
+		add_action( 'register_shortcode_ui', array( 'ATHENA_SC_Shortcode_Config', 'register_shortcake_uis' ) );
 
 		// If the `WP-Shortcode-Interface` plugin is installed, add the definitions.
 		if ( class_exists( 'WP_SCIF_Config' ) ) {

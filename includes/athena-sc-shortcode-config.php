@@ -15,6 +15,34 @@ if ( ! class_exists( 'ATHENA_SC_Shortcode_Config' ) ) {
 			}
 		}
 
+		/**
+		 * Registers the shortcode fields
+		 */
+		public static function register_shortcake_uis() {
+			$shortcodes = self::installed_shortcodes();
+
+			foreach( $shortcodes as $shortcode ) {
+				if ( ! empty( $shortcode->shortcake_fields() ) ) {
+					$args = array(
+						'label'         => $shortcode->name,
+						'listItemImage' => 'dashicons-editor-code',
+						'attrs'         => $shortcode->shortcake_fields()
+					);
+
+					if ( $shortcode->content ) {
+						$args['inner_content'] = array(
+							'label' => 'Inner Content'
+						);
+					}
+
+					shortcode_ui_register_for_shortcode(
+						$shortcode->command,
+						$args
+					);
+				}
+			}
+		}
+
 		public static function register_shortcodes_interface( $shortcodes ) {
 			$installed = self::installed_shortcodes();
 
