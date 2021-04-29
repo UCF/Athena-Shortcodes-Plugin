@@ -9,10 +9,10 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "~4.1.0",
     "gulp-sass-lint": "^1.4.0",
-    "merge": "^2.1.0"
+    "merge": "^2.1.1"
   },
   "dependencies": {
-    "ucf-athena-framework": "^1.0.8"
+    "ucf-athena-framework": "^1.1.0"
   },
   "browserslist": [
     "last 2 versions"
