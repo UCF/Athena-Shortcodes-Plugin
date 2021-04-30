@@ -66,8 +66,8 @@ if ( ! class_exists( 'ATHENA_SC_Config' ) ) {
 					'field_title'     => 'Enable TinyMCE tools and formatting',
 					'field_desc'      => "When checked, custom Athena Framework formats will be made available in the TinyMCE editor.
 										  <br>Additionally, images added to posts/pages via the Media Library will include
-										  Athena-friendly alignment and responsiveness classes (does not affect images in existing
-										  posts/pages).",
+										  Athena-friendly responsiveness classes (does not affect images in existing
+										  posts/pages) and alignment styles.",
 					'field_type'      => 'checkbox'
 				) ),
 				new ATHENA_SC_Plugin_Option( self::$option_prefix . 'enable_optin_classes', array(
