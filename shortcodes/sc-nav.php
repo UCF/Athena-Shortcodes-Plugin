@@ -69,9 +69,14 @@ if ( ! class_exists( 'NavSC' ) ) {
 			$tablist    = filter_var( $atts['tablist'], FILTER_VALIDATE_BOOLEAN );
 			$attributes = array();
 
-			// Set the "role" attribute, if applicable
 			if ( $tablist ) {
+				// Set the "role" attribute, if applicable
 				$attributes[] = 'role="tablist"';
+
+				// If this is a dynamic, vertical tablist, add `aria-orientation` attr
+				if ( in_array( 'flex-column', $classes ) ) {
+					$attributes[] = 'aria-orientation="vertical"';
+				}
 			}
 
 			ob_start();
@@ -276,6 +281,13 @@ if ( ! class_exists( 'NavLinkSC' ) ) {
 				&& ( strlen( $href ) > 1 && substr( $href, 0, 1 ) == '#' )
 			) {
 				$attributes[] = 'aria-controls="' . substr( $href, 1 ) . '"';
+
+				if ( in_array( 'active', $classes ) ) {
+					$attributes[] = 'aria-selected="true"';
+				}
+				else {
+					$attributes[] = 'aria-selected="false"';
+				}
 			}
 
 			ob_start();

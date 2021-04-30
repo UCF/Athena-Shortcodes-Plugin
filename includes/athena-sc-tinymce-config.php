@@ -119,6 +119,11 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 					'font-slab-serif',
 					'font-condensed'
 				) ),
+				self::get_format( 'Font Size', array(
+					'font-size-sm',
+					'font-size-base',
+					'font-size-lg',
+				) ),
 				self::get_format( 'Font Weight/Style', array(
 					'font-weight-light',
 					'font-weight-normal',
@@ -161,6 +166,15 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 					'letter-spacing-3',
 					'letter-spacing-4',
 					'letter-spacing-5'
+				) ),
+				self::get_format( 'Line Height', array(
+					'line-height-0',
+					'line-height-1',
+					'line-height-2',
+					'line-height-3',
+					'line-height-4',
+					'line-height-5',
+					'line-height-6'
 				) ),
 				self::get_format( 'List Styles', array(
 					array( 'classes' => 'list-unstyled', 'selector' => 'ul' ),
