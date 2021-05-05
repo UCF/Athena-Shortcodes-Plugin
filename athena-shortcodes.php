@@ -124,6 +124,8 @@ if ( ! function_exists( 'athena_sc_tinymce_init' ) ) {
 			add_filter( 'get_image_tag_class', array( 'ATHENA_SC_TinyMCE_Config', 'format_image_output_classes' ), 10, 4 );
 			// Override the default caption shortcode to apply Athena classes.
 			add_filter( 'img_caption_shortcode', array( 'ATHENA_SC_TinyMCE_Config', 'format_caption_shortcode' ), 10, 3 );
+			// Add editor alignment styles to the frontend.
+			add_action( 'wp_head', array( 'ATHENA_SC_TinyMCE_Config', 'get_alignment_styles' ), 10 );
 		}
 	}
 

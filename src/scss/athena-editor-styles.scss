@@ -13,5 +13,37 @@
   .media-background {
     position: static;
   }
+
+  // Force WP's alignment classes to override Athena
+  // alignment classes when present
+  .alignleft,
+  .alignleft.float-right,
+  .alignleft.mx-auto.d-block {
+    float: left !important; // sass-lint:disable-line no-important
+  }
+
+  .aligncenter,
+  .aligncenter.float-left,
+  .aligncenter.float-right {
+    display: block;
+    float: none !important; // sass-lint:disable-line no-important
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alignright,
+  .alignright.float-left,
+  .alignright.mx-auto.d-block {
+    float: right !important; // sass-lint:disable-line no-important
+  }
+
+  .alignnone,
+  .alignnone.float-left,
+  .alignnone.mx-auto.d-block,
+  .alignnone.float-right {
+    // sass-lint:disable-block no-important
+    display: inline !important;
+    float: none !important;
+  }
 }
 // sass-lint:enable no-ids
