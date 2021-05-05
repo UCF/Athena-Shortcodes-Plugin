@@ -42,7 +42,7 @@
   .alignnone.mx-auto.d-block,
   .alignnone.float-right {
     // sass-lint:disable-block no-important
-    display: inline !important;
+    display: inline-block !important;
     float: none !important;
   }
 }
