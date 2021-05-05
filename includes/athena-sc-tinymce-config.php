@@ -469,11 +469,11 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		 *
 		 * Intended for use with the `wp_head` hook.
 		 *
-		 * @since TODO
+		 * @since 0.6.0
 		 * @author Jo Dickson
 		 * @return void
 		 */
-		function get_alignment_styles() {
+		public static function get_alignment_styles() {
 			ob_start();
 		?>
 		<style>
