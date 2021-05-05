@@ -477,18 +477,37 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 			ob_start();
 		?>
 		<style>
-		.alignleft {
-			float: left;
+		.alignleft,
+		.alignleft.float-right,
+		.alignleft.mx-auto.d-block {
+			display: block;
+			float: left !important;
 		}
 
-		.aligncenter {
+		.aligncenter,
+		.aligncenter.float-left,
+		.aligncenter.float-right {
 			display: block;
+			float: none !important;
 			margin-left: auto;
 			margin-right: auto;
 		}
 
-		.alignright {
-			float: right;
+		.alignright,
+		.alignright.float-left,
+		.alignright.mx-auto.d-block {
+			display: block;
+			float: right !important;
+		}
+
+		.alignnone,
+		.alignnone.float-left,
+		.alignnone.mx-auto.d-block,
+		.alignnone.float-right {
+			display: inline !important;
+			float: none !important;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
 		}
 		</style>
 		<?php
