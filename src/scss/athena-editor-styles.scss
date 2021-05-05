@@ -19,7 +19,6 @@
   .alignleft,
   .alignleft.float-right,
   .alignleft.mx-auto.d-block {
-    display: block;
     float: left !important; // sass-lint:disable-line no-important
   }
 
@@ -35,7 +34,6 @@
   .alignright,
   .alignright.float-left,
   .alignright.mx-auto.d-block {
-    display: block;
     float: right !important; // sass-lint:disable-line no-important
   }
 
@@ -46,8 +44,6 @@
     // sass-lint:disable-block no-important
     display: inline !important;
     float: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
 // sass-lint:enable no-ids

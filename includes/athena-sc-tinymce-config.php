@@ -480,7 +480,6 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		.alignleft,
 		.alignleft.float-right,
 		.alignleft.mx-auto.d-block {
-			display: block;
 			float: left !important;
 		}
 
@@ -496,7 +495,6 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		.alignright,
 		.alignright.float-left,
 		.alignright.mx-auto.d-block {
-			display: block;
 			float: right !important;
 		}
 
@@ -506,8 +504,6 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		.alignnone.float-right {
 			display: inline !important;
 			float: none !important;
-			margin-left: 0 !important;
-			margin-right: 0 !important;
 		}
 		</style>
 		<?php
