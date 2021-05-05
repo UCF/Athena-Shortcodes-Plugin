@@ -469,7 +469,7 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		 *
 		 * Intended for use with the `wp_head` hook.
 		 *
-		 * @since 0.6.0
+		 * @since 0.7.0
 		 * @author Jo Dickson
 		 * @return void
 		 */
