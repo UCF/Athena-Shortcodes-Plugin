@@ -473,7 +473,7 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		 * @author Jo Dickson
 		 * @return void
 		 */
-		function get_alignment_styles() {
+		public static function get_alignment_styles() {
 			ob_start();
 		?>
 		<style>
