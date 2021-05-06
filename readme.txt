@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: athena-framework, shortcodes
 Requires at least: 4.5.3
 Tested up to: 5.3
-Stable tag: 0.5.3
+Stable tag: 0.6.0
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -32,6 +32,14 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 
 == Changelog ==
+
+= 0.6.0 =
+Enhancements:
+* Added style formats for font-size, line-height utils added in Athena Framework v1.1.0
+* Upgraded packages, including Athena Framework, to latest versions
+
+Bug Fixes:
+* Updated logic for the `[nav]` and `[nav-link]` shortcodes to apply `aria-orientation` and `aria-selected` attributes as needed, respectively
 
 = 0.5.3 =
 Enhancements:

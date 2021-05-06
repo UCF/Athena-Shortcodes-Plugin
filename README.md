@@ -24,6 +24,14 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.6.0 ###
+Enhancements:
+* Added style formats for font-size, line-height utils added in Athena Framework v1.1.0
+* Upgraded packages, including Athena Framework, to latest versions
+
+Bug Fixes:
+* Updated logic for the `[nav]` and `[nav-link]` shortcodes to apply `aria-orientation` and `aria-selected` attributes as needed, respectively
+
 ### 0.5.3 ###
 Enhancements:
 * Added plugin option that turns off the plugin's ability to strip `width`/`height` attributes from `<img>` elems (enabled by default for backward compatibility)
