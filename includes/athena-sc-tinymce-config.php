@@ -437,7 +437,8 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 							'mx-auto d-block',
 							'alignleft',
 							'alignright',
-							'aligncenter'
+							'aligncenter',
+							'alignnone'
 						),
 						'',
 						$image_filtered
@@ -502,7 +503,7 @@ if ( ! class_exists( 'ATHENA_SC_TinyMCE_Config' ) ) {
 		.alignnone.float-left,
 		.alignnone.mx-auto.d-block,
 		.alignnone.float-right {
-			display: inline !important;
+			display: inline-block !important;
 			float: none !important;
 		}
 		</style>
