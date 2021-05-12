@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: athena-framework, shortcodes
 Requires at least: 4.5.3
 Tested up to: 5.3
-Stable tag: 0.6.0
+Stable tag: 0.7.0
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -32,6 +32,14 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 
 == Changelog ==
+
+= 0.7.0 =
+Bug Fixes:
+* Removed custom logic that inserted Athena float/alignment classes on `<img>` tags inserted via the Media Library in favor of using vanilla WordPress alignment classes (`alignleft`, `aligncenter`, `alignright`, `alignnone`).  This update ensures that alignment changes made after the image is inserted in the post content are consistent with what's displayed on the site frontend, and fixes buggy behavior when using image/text alignment buttons in TinyMCE.
+
+  In order to support this change, this update also adds custom styles to TinyMCE's stylesheet and inline styles on the frontend to ensure **vanilla WP alignment classes take precedence over Athena alignment classes when both are present on an element**.
+
+  **We recommend testing this update in a QA environment before upgrading in production to ensure alignment of existing images still works as expected.**  You may need to force-update alignment of some images after upgrading to this version.
 
 = 0.6.0 =
 Enhancements:
@@ -132,7 +140,10 @@ Enhancements:
 
 == Upgrade Notice ==
 
-n/a
+= 0.7.0 =
+This version includes style updates on the frontend and backend to ensure vanilla WordPress alignment classes (`alignleft`, `aligncenter`, `alignright`, `alignnone`) take precedence over Athena alignment classes when both are present on an element.
+
+**We recommend testing this update in a QA environment before upgrading in production to ensure alignment of existing images still works as expected.**  You may need to force-update alignment of some images after upgrading to this version.
 
 
 == Development ==
