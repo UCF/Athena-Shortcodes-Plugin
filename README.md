@@ -24,6 +24,12 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.1 ###
+Enhancements:
+* Updated role attribute on [nav-item]s to `role="presentation"` when the surrounding nav represents a dynamic tabbed interface
+* Added `aria-label` to [nav] shortcode output when semantic `<nav>` element is in use
+* Upgraded packages
+
 ### 0.7.0 ###
 Bug Fixes:
 * Removed custom logic that inserted Athena float/alignment classes on `<img>` tags inserted via the Media Library in favor of using vanilla WordPress alignment classes (`alignleft`, `aligncenter`, `alignright`, `alignnone`).  This update ensures that alignment changes made after the image is inserted in the post content are consistent with what's displayed on the site frontend, and fixes buggy behavior when using image/text alignment buttons in TinyMCE.
