@@ -45,6 +45,12 @@ if ( ! class_exists( 'NavSC' ) ) {
 					'name'    => 'Controls Tab Panes',
 					'desc'    => 'Check this checkbox if the nav contains links that toggle tab panes when clicked. Applies role="tablist" to the generated nav element.',
 					'type'    => 'checkbox'
+				),
+				array(
+					'param'   => 'label',
+					'name'    => 'Label (ARIA)',
+					'desc'    => 'Short descriptive text for this nav; required if Element Type is set to "nav (semantic navigation element)".',
+					'type'    => 'text'
 				)
 			);
 		}
@@ -67,6 +73,7 @@ if ( ! class_exists( 'NavSC' ) ) {
 			$classes    = array_unique( array_merge( array( 'nav' ), explode( ' ', $atts['class'] ) ) );
 			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
 			$tablist    = filter_var( $atts['tablist'], FILTER_VALIDATE_BOOLEAN );
+			$label      = $atts['label'];
 			$attributes = array();
 
 			if ( $tablist ) {
@@ -77,6 +84,11 @@ if ( ! class_exists( 'NavSC' ) ) {
 				if ( in_array( 'flex-column', $classes ) ) {
 					$attributes[] = 'aria-orientation="vertical"';
 				}
+			}
+
+			if ( $elem === 'nav' ) {
+				// If this is a semantic <nav> element, add `aria-label` attr
+				$attributes[] = 'aria-label="' . $label . '"';
 			}
 
 			ob_start();
@@ -151,14 +163,64 @@ if ( ! class_exists( 'NavItemSC' ) ) {
 		public function callback( $atts, $content='' ) {
 			$atts = shortcode_atts( $this->defaults(), $atts );
 
-			$styles  = $atts['style'];
-			$classes = array_unique( array_merge( array( 'nav-item' ), explode( ' ', $atts['class'] ) ) );
-			$elem    = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
+			$styles     = $atts['style'];
+			$attributes = array();
+			$classes    = array_unique( array_merge( array( 'nav-item' ), explode( ' ', $atts['class'] ) ) );
+			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
+
+			// Check the nav item's inner contents and see if it corresponds
+			// to a single nav link with a data-toggle attribute.  If so, we
+			// assume that this whole nav represents a dynamic tabbed
+			// interface, which requires the outer nav and each inner nav link
+			// to have specific roles with a parent/child relationship
+			// (e.g. role="tablist" and role="tab").
+			//
+			// Thus, we must set role="presentation" on the nav item
+			// surrounding each nav link so that screenreaders (and
+			// accessibility scanners) can properly detect the parent/child
+			// role relationship.
+			$content_formatted = do_shortcode( $content );
+			$has_child_data_toggle = false;
+
+			// If there is some inner shortcode content, attempt to parse
+			// through it.  Don't pass empty strings to DomDocument->loadHTML
+			if ( trim( $content_formatted ) ) {
+				$dom = new DomDocument();
+
+				// DomDocument->loadHTML complains about HTML5 elements, so we
+				// have to suppress errors. https://stackoverflow.com/a/41845049
+				libxml_clear_errors();
+				$error_settings_cached = libxml_use_internal_errors( true );
+
+				// Parse the formatted HTML string
+				$dom->loadHTML( $content_formatted );
+				$node = null;
+
+				// Find a valid child element; see if it has a data-toggle attr
+				$child_nodes = $dom->getElementsByTagName('body')->item(0)->childNodes;
+				if ( count( $child_nodes ) === 1 ) {
+					$node = $child_nodes->item(0);
+					$data_toggle = $node->getAttribute('data-toggle');
+
+					if ( $data_toggle ) {
+						$has_child_data_toggle = true;
+					}
+				}
+
+				// Clean up libxml error handling
+				libxml_clear_errors();
+				libxml_use_internal_errors( $error_settings_cached );
+			}
+
+			if ( $has_child_data_toggle ) {
+				$attributes[] = 'role="presentation"';
+			}
 
 			ob_start();
 		?>
 			<<?php echo $elem; ?> class="<?php echo implode( ' ', $classes ); ?>"
 			<?php if ( $styles ) { echo 'style="' . $styles . '"'; } ?>
+			<?php if ( $attributes ) { echo implode( ' ', $attributes ); } ?>
 			>
 				<?php echo do_shortcode( $content ); ?>
 			</<?php echo $elem; ?>>
