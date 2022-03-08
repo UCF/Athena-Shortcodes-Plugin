@@ -8,7 +8,7 @@
 #tinymce {
   // !important necessary here to override !important styles added
   // by WordPress when "distraction-free" editing mode is enabled
-  padding: $grid-gutter-width-base / 2 !important; // sass-lint:disable-line no-important
+  padding: $grid-gutter-width-base * .5 !important; // sass-lint:disable-line no-important
 
   .media-background {
     position: static;
