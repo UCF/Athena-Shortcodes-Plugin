@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Athena Shortcodes
-Version: 0.7.2
+Version: 0.7.3
 Author: UCF Web Communications
 Description: Provides shortcodes for use with the Athena-Framework.
 GitHub Plugin URI: https://github.com/UCF/Athena-Shortcodes-Plugin/
@@ -23,7 +23,7 @@ if ( ! function_exists( 'athena_sc_get_cache_bust' ) ) {
 			$plugin_cache_bust = date( 'YmdHis' );
 		}
 		else {
-			if ( ! empty( $plugin_data ) && isset( $plugin['Version'] ) ) {
+			if ( ! empty( $plugin_data ) && isset( $plugin_data['Version'] ) ) {
 				$plugin_cache_bust = $plugin_data['Version'];
 			}
 			else {

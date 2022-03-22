@@ -24,6 +24,10 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.3 ###
+Bug fixes:
+* Fixed bug with TinyMCE stylesheet cache busting
+
 ### 0.7.2 ###
 Enhancements:
 * Upgraded packages, including the Athena Framework, to latest versions
