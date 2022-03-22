@@ -23,7 +23,7 @@ if ( ! function_exists( 'athena_sc_get_cache_bust' ) ) {
 			$plugin_cache_bust = date( 'YmdHis' );
 		}
 		else {
-			if ( ! empty( $plugin_data ) && isset( $plugin['Version'] ) ) {
+			if ( ! empty( $plugin_data ) && isset( $plugin_data['Version'] ) ) {
 				$plugin_cache_bust = $plugin_data['Version'];
 			}
 			else {
