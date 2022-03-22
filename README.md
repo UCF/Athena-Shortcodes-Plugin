@@ -24,6 +24,11 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.2 ###
+Enhancements:
+* Upgraded packages, including the Athena Framework, to latest versions
+* Updated usage of slash division in athena-editor-styles.scss
+
 ### 0.7.1 ###
 Enhancements:
 * Updated role attribute on [nav-item]s to `role="presentation"` when the surrounding nav represents a dynamic tabbed interface

@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: athena-framework, shortcodes
 Requires at least: 4.5.3
 Tested up to: 5.3
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -32,6 +32,11 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 
 == Changelog ==
+
+= 0.7.2 =
+Enhancements:
+* Upgraded packages, including the Athena Framework, to latest versions
+* Updated usage of slash division in athena-editor-styles.scss
 
 = 0.7.1 =
 Enhancements:
