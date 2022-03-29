@@ -45,5 +45,13 @@
     display: inline-block !important;
     float: none !important;
   }
+
+  // Unset .stretched-link behavior to support usage within
+  // shortcode-generated containing blocks
+  .stretched-link {
+    &::#{$stretched-link-pseudo-element} {
+      position: static;
+    }
+  }
 }
 // sass-lint:enable no-ids
