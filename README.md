@@ -24,6 +24,10 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.4 ###
+Bug fixes:
+* Unset absolute positioning on `.stretched-link` pseudo-element in WYSIWYG editor stylesheet to allow usage of this class on links contained within shortcode-generated containing blocks.
+
 ### 0.7.3 ###
 Bug fixes:
 * Fixed bug with TinyMCE stylesheet cache busting
