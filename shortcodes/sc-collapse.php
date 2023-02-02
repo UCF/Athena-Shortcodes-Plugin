@@ -61,7 +61,7 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 						'button' => 'Button',
 						'tab'    => 'Tab'
 					),
-					'default' => 'button'
+					'default' => 'tab'
 				)
 			);
 		}
