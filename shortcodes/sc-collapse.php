@@ -62,7 +62,7 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 						'tab'      => 'Tab',
 						'tabpanel' => 'Tab Panel'
 					),
-					'default' => 'tab'
+					'default' => 'button'
 				)
 			);
 		}
@@ -269,7 +269,7 @@ if ( ! class_exists( 'CollapseToggleSC' ) ) {
 						'button' => 'Button',
 						'tab'    => 'Tab'
 					),
-					'default' => 'tab'
+					'default' => 'button'
 				)
 			);
 		}
