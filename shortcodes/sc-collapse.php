@@ -51,17 +51,6 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 					'name'    => 'Inline Styles',
 					'desc'    => 'Any additional styles for the collapsible.',
 					'type'    => 'text'
-				),
-				array(
-					'param'   => 'role',
-					'name'    => 'ARIA Role',
-					'desc'    => 'The ARIA role to assign to the toggle',
-					'type'    => 'select',
-					'options' => array(
-						'button' => 'Button',
-						'tab'    => 'Tab'
-					),
-					'default' => 'tab'
 				)
 			);
 		}
@@ -95,7 +84,7 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 			// Add applicable attributes
 			if ( $parent ) {
 				$attributes[] = 'data-parent="' . $parent . '"';
-				$attributes[] = 'role="' . $role . '"';
+				$attributes[] = 'role="button"';
 			}
 
 			ob_start();
@@ -258,6 +247,17 @@ if ( ! class_exists( 'CollapseToggleSC' ) ) {
 					'desc'    => 'If checked, the toggler will represent a collapsible component that is already expanded by default. In most cases, this box should remain unchecked.',
 					'type'    => 'checkbox',
 					'default' => false
+				),
+				array(
+					'param'   => 'role',
+					'name'    => 'ARIA Role',
+					'desc'    => 'The ARIA role to assign to the toggle',
+					'type'    => 'select',
+					'options' => array(
+						'button' => 'Button',
+						'tab'    => 'Tab'
+					),
+					'default' => 'tab'
 				)
 			);
 		}
@@ -281,6 +281,7 @@ if ( ! class_exists( 'CollapseToggleSC' ) ) {
 			$classes    = $atts['class'] ?: false;
 			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
 			$expanded   = $atts['is_expanded'] ?: $this->defaults( 'is_expanded' );
+			$role       = $atts['role'];
 
 			// Get applicable attributes
 			if ( $atts['target'] ) {
@@ -295,7 +296,7 @@ if ( ! class_exists( 'CollapseToggleSC' ) ) {
 
 			// Set the toggle's "role" attribute if it is a link.
 			if ( $elem == 'a' ) {
-				$attributes[] = 'role="button"';
+				$attributes[] = 'role="' . $role . '"';
 				$attributes[] = 'tabindex="0"';
 			}
 
