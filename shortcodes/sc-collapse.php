@@ -51,6 +51,18 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 					'name'    => 'Inline Styles',
 					'desc'    => 'Any additional styles for the collapsible.',
 					'type'    => 'text'
+				),
+				array(
+					'param'   => 'role',
+					'name'    => 'ARIA Role',
+					'desc'    => 'The ARIA role to assign to the toggle',
+					'type'    => 'select',
+					'options' => array(
+						'button'   => 'Button',
+						'tab'      => 'Tab',
+						'tabpanel' => 'Tab Panel'
+					),
+					'default' => 'tab'
 				)
 			);
 		}
@@ -280,7 +292,7 @@ if ( ! class_exists( 'CollapseToggleSC' ) ) {
 			$classes    = $atts['class'] ?: false;
 			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
 			$expanded   = $atts['is_expanded'] ?: $this->defaults( 'is_expanded' );
-			$role       = $atts['role'];
+			$role       = $atts['role'] ?: $this->defaults( 'role' );
 
 			// Get applicable attributes
 			if ( $atts['target'] ) {
