@@ -79,7 +79,6 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
 			$parent     = $atts['data_parent'];
 			$attributes = array();
-			$role       = $atts['role'];
 
 			// Add applicable attributes
 			if ( $parent ) {
