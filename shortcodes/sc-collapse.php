@@ -91,11 +91,12 @@ if ( ! class_exists( 'CollapseSC' ) ) {
 			$elem       = array_key_exists( $atts['element_type'], $this->element_type_options() ) ? $atts['element_type'] : $this->defaults( 'element_type' );
 			$parent     = $atts['data_parent'];
 			$attributes = array();
+			$role       = $atts['role'] ?: $this->defaults( 'role' );
 
 			// Add applicable attributes
 			if ( $parent ) {
 				$attributes[] = 'data-parent="' . $parent . '"';
-				$attributes[] = 'role="button"';
+				$attributes[] = 'role="' . $role . '"';
 			}
 
 			ob_start();
