@@ -24,6 +24,10 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.6 ###
+Enhancements:
+* Added composer file.
+
 ### 0.7.5 ###
 Bug Fixes:
 * Adds options for the collapse and collapse-toggle shortcodes to allow for proper role attributes to be applied.
