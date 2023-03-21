@@ -24,6 +24,10 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.7 ###
+Bug Fix:
+* Bumped version so readme and plugin file versions match.
+
 ### 0.7.6 ###
 Enhancements:
 * Added composer file.
