@@ -106,6 +106,15 @@ if ( ! class_exists( 'ATHENA_SC_Config' ) ) {
 										  <br>For backward compatibility, this setting is enabled by default, but we recommend
 										  disabling this setting when possible for performance reasons.",
 					'field_type'      => 'checkbox'
+				) ),
+				new ATHENA_SC_Plugin_Option( self::$option_prefix . 'disable_the_content_routing', array(
+					'default'         => false,
+					'format_callback' => 'wp_validate_boolean',
+					'field_title'     => 'Disable the_content rerouting on ACF WYSYWYG fields',
+					'field_desc'      => "When checked, ACF WYSIWYG fields will route normally through the ACF specific <code>the_content</code>
+										  filter. By default, content from an ACF WYSIWYG is run through the built-in WordPress <code>the_content</code>
+										  filter. This can cause problems with other plugins that leverage the built-in filter, like Elementor.",
+					'field_type'      => 'checkbox'
 				) )
 			);
 		}
