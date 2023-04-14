@@ -24,6 +24,10 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.9 ###
+Bug Fix:
+* Removed debugging message
+
 ### 0.7.8 ###
 Bug Fix:
 * Added a setting that allows for ACF WYSIWYG content to be run through the default ACF the_content filter instead of rerouting to the built-in WordPress the_content filter.

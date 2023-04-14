@@ -81,7 +81,6 @@ if ( ! function_exists( 'athena_sc_init' ) ) {
 		// Hook into ACF's custom field filtering hooks to strip excess
 		// <p></p> and <br> insertion around shortcodes in WYSIWYG fields.
 		if ( class_exists( 'acf' ) && !get_option( 'athena_sc_disable_the_content_routing' ) ) {
-			var_dump( 'enabled' );
 			add_filter( 'acf/format_value/type=wysiwyg', array( 'ATHENA_SC_Shortcode_Config', 'format_acf_wysiwyg_output' ), 99, 3 );
 		}
 		// Register our shortcodes.
