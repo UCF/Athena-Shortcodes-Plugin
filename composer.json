@@ -1,0 +1,8 @@
+{
+    "name": "ucf/athena-shortcodes-plugin",
+    "description": "Provides shortcodes that support the use of the Athena Framework.",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
