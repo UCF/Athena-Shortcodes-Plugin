@@ -35,8 +35,9 @@ if ( ! function_exists( 'athena_sc_get_cache_bust' ) ) {
 	}
 }
 
-define( 'ATHENA_SC__CACHE_BUST', athena_sc_get_cache_bust() );
-
+add_action('init', function() {
+    define( 'ATHENA_SC__CACHE_BUST', athena_sc_get_cache_bust() );
+});
 
 // Shortcode files
 include_once ATHENA_SC__PLUGIN_DIR . 'includes/class-shortcode.php';
