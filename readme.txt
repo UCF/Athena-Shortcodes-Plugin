@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: athena-framework, shortcodes
 Requires at least: 4.5.3
 Tested up to: 6.1
-Stable tag: 0.7.9
+Stable tag: 0.7.12
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -32,6 +32,18 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 
 == Changelog ==
+
+= 0.7.12 =
+Bug Fix:
+* Updated the logic to see if there is more than 0 child nodes, then grab the first to see if it has a "data-toggle" attribute.
+
+= 0.7.11 =
+Bug Fix:
+* Version bumped
+
+= 0.7.10 =
+Bug Fix:
+* Text domain bug in WordPress 6.7 and above [issue #107] by @Ramin-Farhadi in https://github.com/UCF/Athena-Shortcodes-Plugin/pull/108
 
 = 0.7.9 =
 Bug Fix:

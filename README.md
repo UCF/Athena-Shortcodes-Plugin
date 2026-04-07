@@ -24,6 +24,18 @@ Head over to the [Athena Shortcodes Plugin wiki](https://github.com/UCF/Athena-S
 
 ## Changelog ##
 
+### 0.7.12 ###
+Bug Fix:
+* Updated the logic to see if there is more than 0 child nodes, then grab the first to see if it has a "data-toggle" attribute.
+
+### 0.7.11 ###
+Bug Fix:
+* Version bumped
+
+### 0.7.10 ###
+Bug Fix:
+* Text domain bug in WordPress 6.7 and above [issue #107] by @Ramin-Farhadi in https://github.com/UCF/Athena-Shortcodes-Plugin/pull/108
+
 ### 0.7.9 ###
 Bug Fix:
 * Removed debugging message
