@@ -198,7 +198,8 @@ if ( ! class_exists( 'NavItemSC' ) ) {
 
 				// Find a valid child element; see if it has a data-toggle attr
 				$child_nodes = $dom->getElementsByTagName('body')->item(0)->childNodes;
-				if ( count( $child_nodes ) === 1 ) {
+
+				if ( count( $child_nodes ) > 0 ) {
 					$node = $child_nodes->item(0);
 					$data_toggle = $node->getAttribute('data-toggle');
 
